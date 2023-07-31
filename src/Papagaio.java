@@ -6,6 +6,6 @@ public class Papagaio {
         String messageBody = String.join(" ", args);
         UserMessage userMessage = new UserMessage(messageBody);
         Chat chat = new Chat(userMessage);
-        chat.sendResponse();
+        chat.respond();
     }
 }

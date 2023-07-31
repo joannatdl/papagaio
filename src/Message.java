@@ -6,4 +6,8 @@ public class Message {
         this.body = body;
         this.sendByAI = sendByAI;
     }
+
+    public void print() {
+        System.out.println(body);
+    }
 }

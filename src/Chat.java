@@ -10,7 +10,9 @@ public class Chat {
         this.messages.add(message);
     }
 
-    public void sendResponse() {
-        System.out.println("Hello! This is a very intelligent response to your message :P");
+    public void respond() {
+        AIMessage response = new AIMessage();
+        this.messages.add(response);
+        response.print();
     }
 }
