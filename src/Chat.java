@@ -1,10 +1,13 @@
+import java.util.ArrayList;
+
 public class Chat {
     private User user;
-    private Message[] messages;
+    private ArrayList<Message> messages;
 
     public Chat(Message message) {
         this.user = new User();
-        this.messages = new Message[] { message };
+        this.messages = new ArrayList<Message>();
+        this.messages.add(message);
     }
 
     public void sendResponse() {
