@@ -3,4 +3,10 @@ public class AIMessage extends Message {
     public AIMessage() {
         super(DEFAULT_BODY, true);
     }
+
+    @Override
+    public void print() {
+        System.out.println("Your intelligent teacher responded:");
+        super.print();
+    }
 }
