@@ -1,5 +1,6 @@
 public class AIMessage extends Message {
-    public AIMessage(String body) {
-        super(body, true);
+    private static final String DEFAULT_BODY = "Hello! This is a very intelligent response to your message :P";
+    public AIMessage() {
+        super(DEFAULT_BODY, true);
     }
 }
