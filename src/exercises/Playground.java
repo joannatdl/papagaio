@@ -28,7 +28,11 @@ public class Playground {
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
 //      4. Try creating an array to represent the tic-tac-toe board to the right
-        char[][] ticTacToe = new char[][] {{'o', 'x', 'x'}, {'x', 'o', 'o'}, {'x', 'o', 'o'}};
+        char[][] ticTacToe = {
+                {'o', 'x', 'x'},
+                {'x', 'o', 'o'},
+                {'x', 'o', 'o'}
+        };
 
 //        4.1.How would you access the value in the bottom right square with Java code?
         char value = ticTacToe[2][2];
