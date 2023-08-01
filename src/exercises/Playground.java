@@ -1,9 +1,6 @@
 package exercises;
 
-import exercises.bank.Bank;
-import exercises.bank.BankManager;
-
-import static java.lang.System.*;
+import static java.lang.System.out;
 
 public class Playground {
     public static void main(String[] args) {
@@ -18,7 +15,7 @@ public class Playground {
 //       >> the classes outside of this package are the solution for this exercise
 
 //      2. Create an array and initialize it with the days of the week.
-        String[] daysOfWeek = new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
 //        2.1.Use System.out.println() to print:
 //          2.1.1.The number of items in the array
@@ -28,7 +25,7 @@ public class Playground {
         out.println(daysOfWeek[3]);
 
 //      3. Create an array and initialize it with numbers, 1-10
-        int[] numbers = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
 //      4. Try creating an array to represent the tic-tac-toe board to the right
         char[][] ticTacToe = new char[][] {{'o', 'x', 'x'}, {'x', 'o', 'o'}, {'x', 'o', 'o'}};
