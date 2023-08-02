@@ -10,7 +10,7 @@ public class Playground {
 
 //        3. How can you make sure when people enter text into a program, there are no unintended
 //        spaces at the beginning or end of the text?
-        String textWithNoUnintendedSpaces = "    In this text there were unintended spaces at the beginning.".stripLeading();
+        String textWithNoUnintendedSpaces = "    In this text there were unintended spaces at the beginning and end.   ".strip();
         System.out.println(textWithNoUnintendedSpaces);
 
 //        4. If someone enters “ alphabet “ (notice the spaces) as input into a method, make that
