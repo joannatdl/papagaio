@@ -1,6 +1,6 @@
-package exercises;
+package exercises.section02;
 
-import exercises.bank.Bank;
+import exercises.section02.bank.Bank;
 
 //  8. Model a Customer
 public class Customer {

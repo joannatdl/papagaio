@@ -1,4 +1,4 @@
-package exercises.bank;
+package exercises.section02.bank;
 
 //  8.  Model a Bank with the ability to access the vault.
 public class Bank {

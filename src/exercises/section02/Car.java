@@ -1,4 +1,4 @@
-package exercises;
+package exercises.section02;
 
 //  7. Model a Car
 public class Car {
