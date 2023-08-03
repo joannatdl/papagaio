@@ -14,10 +14,13 @@ public class Playground {
         System.out.println("stark".matches(regexp));
 
 //        2. Use capture groups to write a regex that could match: Abracadabra or Agracadagra
-        regexp = "A([bg]ra)cada([bg]ra)";
+        regexp = "A([bg])racada\\1ra";
+        System.out.println("Abracadabra".matches(regexp));
+        System.out.println("Agracadagra".matches(regexp));
+        System.out.println("Agracadabra".matches(regexp));
 
 //        3. How can you use parentheses in a regex for grouping but without capturing?
-        regexp = "?:(blablabla)";
+        regexp = "(?:blablabla)";
 
 //        4. Write a regex that tests whether a String is an address and allows you to extract the parts
 //        (your choice for address format).
@@ -40,9 +43,9 @@ public class Playground {
 //        1. Note: Doing this in regex is actually notoriously difficult to comply with ALL the ways an
 //        email address can be written. However, you can just do the simplest form of email
 //        address you can think of, such as: first.last@domain.com
-        regexp = "[a-z\\d\\.]*@[a-z\\d]*.[a-z]*";
+        regexp = "[\\w\\d]+(.[\\w\\d]+)+@([\\w\\d]*.)+\\w+";
         pat = Pattern.compile(regexp, Pattern.DOTALL);
-        mat = pat.matcher("email.email3@blabla.com");
+        mat = pat.matcher("email.email3.@blabla.jiji.com");
         System.out.println(mat.matches());
     }
 }
