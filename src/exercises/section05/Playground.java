@@ -3,6 +3,7 @@ package exercises.section05;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
@@ -78,16 +79,17 @@ public class Playground {
 //      123456.783                $123,456.78
         System.out.println(cf.format(123456.783));
 //      -9876.32532               (9,876.325)
-        NumberFormat df = new DecimalFormat(",###.###;(#)"); // for some reason it treats . as , and , as spaces
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.US);
+        NumberFormat df = new DecimalFormat(",###.###;(#)", symbols);
         System.out.println(df.format( -9876.32532));
 //      23.19283928394829182      2.319284e+01f
-        df = new DecimalFormat("0.0E0"); // this one is not working as well
+        df = new DecimalFormat("0.0E0", symbols);
         System.out.println(df.format(23.19283928394829182));
 //      123456                    0000123456
         df = new DecimalFormat("0000000000");
         System.out.println(df.format(123456));
 //      -9876.35532               -9,876.4
-        df = new DecimalFormat("#,###.#"); // the same again
+        df = new DecimalFormat("#,###.#", symbols);
         System.out.println(df.format(-9876.35532));
 
 //  11. Write a method that takes the String inputs, “37” & “13”, and returns an integer of their sum, 50.
