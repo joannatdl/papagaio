@@ -17,8 +17,7 @@ public class Name {
     public static void next() {
         if (i < 10) {
 //            1. Make the next() method capitalize the first letter of each name as it outputs them
-            String name = list[i];
-            i++;
+            String name = list[i++];
             System.out.println(name.substring(0, 1).toUpperCase() + name.substring(1));
         }
     }

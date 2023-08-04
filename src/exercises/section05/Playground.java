@@ -1,6 +1,7 @@
 package exercises.section05;
 
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.ParseException;
@@ -16,14 +17,17 @@ public class Playground {
 //      you received at any given time, what would be a highly compact (or compressed - using
 //      the least amount of memory or storage) way to record them (using what you learned in this
 //      module)? For example, you could receive signals A + B + C simultaneously, or A + D, or just G, etc.
-        boolean[] signals = new boolean[8];
+//      boolean seem to need same memory as byte :/ so an array of booleans which i wanted to use
+//      is more memory consuming than one byte
+        byte signals = Byte.parseByte("00001101", 2);
 //        1. If you received signals A + D + C simultaneously, how could you efficiently determine
 //           that D was one of the signals you received - based on your solution above?
-        if (signals[3]) {
+        if ((Byte.parseByte("00001000", 2) & signals) > 0) {
             System.out.println("Received D!");
         }
 //  2.  What’s an alternative way you could add 2 + 4 without using “+” symbol?
         Integer.sum(2, 4);
+        System.out.println(2 | 4); // is what they wanted
 //  5.  Make a method, next(), that can be called 10 times and generate a random integer between
 //      0 & 10 (non-inclusive). This method keep a running sum of all random numbers it generates
 //      and return that sum each time. If first time next() is called, it generates 5, and second time
@@ -44,6 +48,7 @@ public class Playground {
         System.out.println(divide("$12,345.83"));
 
 //  8.  Use printf() to format the following inputs to print out the following outputs
+        System.out.printf("%,+.1f%n", -9876.35532);
 //      123456.783                $123,456.78
         System.out.printf(Locale.US, "$%,.2f%n", 123456.783);
 //      -9876.32532               (9,876.325)
@@ -51,7 +56,7 @@ public class Playground {
 //      23.19283928394829182      2.319284e+01f
         System.out.printf(Locale.US, "%e%n", 23.19283928394829182);
 //      123456                    0000123456
-        System.out.printf("%010d%n", 12345);
+        System.out.printf("%010d%n", 123456);
 //      -9876.35532               -9,876.4
         System.out.printf(Locale.US, "%,.1f%n", -9876.35532);
 
@@ -104,7 +109,7 @@ public class Playground {
 //     live. So, if you live in the United States, it would return “$149.32”, Korea = ₩149, France/EU = 149,32 €, etc
     public static String formatMoney(String input) {
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
-        return formatter.format(Double.valueOf(input));
+        return formatter.format(new BigDecimal(input));
     }
 
 //  7. Write a function that takes a String input of “$12,345.83” and prints out that value divided
@@ -113,7 +118,7 @@ public class Playground {
         double divider = 32.19;
         NumberFormat formatter = NumberFormat.getCurrencyInstance(Locale.US);
         Number money = formatter.parse(input);
-        BigDecimal result = BigDecimal.valueOf(money.doubleValue() / divider);
+        BigDecimal result = new BigDecimal(money.toString()).divide(new BigDecimal("32.19"), MathContext.DECIMAL32);
         return formatter.format(result);
     }
 
