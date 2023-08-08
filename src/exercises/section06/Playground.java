@@ -99,19 +99,19 @@ public class Playground {
     private static void printMenu() {
         String food = "";
         for (String day: DAYS_OF_WEEK) {
-            if (day == "Sunday") {
+            if (day.equals("Sunday")) {
                 food = "pot roast";
-            } else if (day == "Monday") {
+            } else if (day.equals("Monday")) {
                 food = "spagetti";
-            } else if (day == "Tuesday") {
+            } else if (day.equals("Tuesday")) {
                 food = "tacos";
-            } else if (day == "Wednesday") {
+            } else if (day.equals("Wednesday")) {
                 food = "chicken";
-            } else if (day == "Thursday") {
+            } else if (day.equals("Thursday")) {
                 food = "meatleaf";
-            } else if (day == "Friday") {
+            } else if (day.equals("Friday")) {
                 food = "hamburgers";
-            } else if (day == "Saturday") {
+            } else if (day.equals("Saturday")) {
                 food = "pizza";
             }
             System.out.printf("We eat %s on %s%n", food, day);
@@ -233,10 +233,9 @@ public class Playground {
         """;
         Pattern pattern = Pattern.compile(regexp, Pattern.DOTALL | Pattern.COMMENTS);
         Matcher matcher;
-        for (String address: addresses.split("\n")) {
-            System.out.println(address);
-            matcher = pattern.matcher(address);
-            if (!matcher.matches()) { break; }
+        matcher = pattern.matcher(addresses);
+
+        while (matcher.find()) {
             System.out.println(matcher.group("number"));
             System.out.println(matcher.group("street"));
             System.out.println(matcher.group("city"));
