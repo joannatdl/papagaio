@@ -1,7 +1,5 @@
 package exercises.section02;
 
-import exercises.section02.Car;
-
 import static java.lang.System.out;
 
 public class Playground {
