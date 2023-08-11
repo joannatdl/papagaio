@@ -81,6 +81,6 @@ public class SpoonerTest {
         output = Spooner.transpose(input);
         assertEquals(expectedOutput, output);
     }
-
+// dreamming about putting the input and output strings into an array and looping through them and creating the tests dynamically
 
 }
