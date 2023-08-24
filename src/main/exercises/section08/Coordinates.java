@@ -3,8 +3,8 @@ package exercises.section08;
 import java.util.Objects;
 
 public class Coordinates {
-    int x;
-    int y;
+    private final int x;
+    private final int y;
 
     public Coordinates(int x, int y) {
         this.x = x;
@@ -49,5 +49,13 @@ public class Coordinates {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+    }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
     }
 }
