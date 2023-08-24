@@ -7,6 +7,7 @@ public class ChessBoard {
     private Piece[] whiteCapturedPieces = new Piece[16];
 
     public ChessBoard() {
+    }
 
     public void add(Piece piece, String location) {
         piece.board = this;
